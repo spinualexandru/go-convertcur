@@ -14,7 +14,7 @@ import (
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "curconv"
+	app.Name = "go-convertcur"
 	app.Usage = "VALUE BASE_CURRENCY to TARGET_CURRENCY"
 	app.Action = func(c *cli.Context) error {
 		amount := c.Args().Get(0)

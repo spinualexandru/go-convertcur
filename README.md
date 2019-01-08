@@ -8,6 +8,6 @@ $ go install
 #### Example
 
 ```sh
-$ curconv 25 USD to EUR
+$ go-convertcur 25 USD to EUR
 25 USD = 21.843600 EUR
 ```
