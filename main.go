@@ -23,7 +23,7 @@ func main() {
 
 		response, err := http.Get(fmt.Sprintf("https://api.exchangeratesapi.io/latest?symbols=%s&base=%s", target, base))
 		if err != nil {
-			fmt.Printf("%sX4", err)
+			fmt.Printf("%s", err)
 			os.Exit(1)
 		} else {
 			defer response.Body.Close()
