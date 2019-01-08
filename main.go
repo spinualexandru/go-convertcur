@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+	"strings"
 
 	"github.com/urfave/cli"
 )
@@ -18,8 +19,8 @@ func main() {
 	app.Usage = "VALUE BASE_CURRENCY to TARGET_CURRENCY"
 	app.Action = func(c *cli.Context) error {
 		amount := c.Args().Get(0)
-		base := c.Args().Get(1)
-		target := c.Args().Get(3)
+		base := strings.ToUpper(c.Args().Get(1))
+		target := strings.ToUpper(c.Args().Get(3))
 
 		response, err := http.Get(fmt.Sprintf("https://api.exchangeratesapi.io/latest?symbols=%s&base=%s", target, base))
 		if err != nil {
